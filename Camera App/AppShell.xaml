@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Camera_App.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Camera_App"
+    Shell.FlyoutBehavior="Flyout"
+    Title="Camera_App">
+
+    <FlyoutItem Title="Home">
+        <ShellContent Title="Camera" ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        <ShellContent Title="Settings_BLE" ContentTemplate="{DataTemplate local:SettingsPage_BLE}" Route="SettingsPage_BLE" />
+        <ShellContent Title="Settings_WLAN" ContentTemplate="{DataTemplate local:SettingsPage_WLAN}" Route="SettingsPage_WLAN" />
+    </FlyoutItem> 
+        
+</Shell>

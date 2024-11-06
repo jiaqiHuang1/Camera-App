@@ -1,0 +1,20 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Camera_App.SettingsPage_WLAN">
+    <StackLayout Padding="20">
+        <!-- IP Address Input Field -->
+        <Entry x:Name="IpEntry" Placeholder="Enter Computer IP Address" />
+
+        <!-- Connect Button -->
+        <Button x:Name="ConnectButton" Text="Connect" Clicked="OnConnectButtonClicked" />
+
+        <!-- Capture Photo Button -->
+        <Button x:Name="CaptureButton" Text="Capture Photo" Clicked="OnCaptureButtonClicked" IsEnabled="False" />
+
+        <!-- Loading Indicator -->
+        <ActivityIndicator x:Name="ActivityIndicator" IsRunning="False" IsVisible="True" />
+
+        <!-- Image Display -->
+        <Image x:Name="CapturedImage" />
+    </StackLayout>
+</ContentPage>

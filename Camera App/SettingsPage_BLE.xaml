@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Camera_App.SettingsPage_BLE"
+             Title="Settings">
+
+    <StackLayout Padding="20">
+        <Label Text="Settings Page"
+               FontSize="24"
+               HorizontalOptions="Center"
+               Margin="0,20,0,20"/>
+
+        <!-- Tags: show bluetooth device list -->
+        <Label Text="Available Bluetooth Devices:"
+               FontSize="18"
+               HorizontalOptions="Center"
+               Margin="0,20,0,10"
+               IsVisible="False"
+               x:Name="BluetoothListLabel"/>
+
+        <!-- Bluetooth Device List -->
+        <ListView x:Name="BluetoothDeviceListView"
+                  ItemSelected="OnDeviceSelected"
+                  VerticalOptions="FillAndExpand"
+                  IsVisible="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Id}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

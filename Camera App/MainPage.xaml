@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Camera_App.MainPage">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="10"
+            VerticalOptions="Start">
+            <toolkit:MediaElement x:Name="videoMediaElement" WidthRequest="400" HeightRequest="320"   
+                    ShouldAutoPlay="True"
+                    Aspect="AspectFill"
+                    Source="http://vjs.zencdn.net/v/oceans.mp4"/>
+
+            <Frame Grid.Row="0" Grid.Column="0" CornerRadius="13" HasShadow="False" BackgroundColor="White" Padding="12">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10">
+                    <Image Source="icon_camera.png" HeightRequest="50"></Image>
+                    <Label Text="Capture" VerticalTextAlignment="Center" FontSize="20" HeightRequest="30" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"></Label>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Up Button -->
+                <Button Grid.Column="1"
+                    WidthRequest="100" HeightRequest="90"
+                    Text="Up"
+                    TextColor="Black" FontAttributes="Bold" FontSize="20"
+                    BorderColor="SlateGrey" BackgroundColor="White" BorderWidth="1"
+                    HorizontalOptions="Center" VerticalOptions="Center"
+                    Clicked="OnUpClicked"/>
+
+                <!-- Left Button -->
+                <Button Grid.Row="1" 
+                    WidthRequest="100" HeightRequest="90" 
+                    Text="Left" 
+                    TextColor="Black" FontAttributes="Bold" FontSize="20" 
+                    BorderColor="SlateGrey" BackgroundColor="White" BorderWidth="1"
+                    HorizontalOptions="Center" VerticalOptions="Center"
+                    Clicked="OnLeftClicked"/>
+
+                <!-- Right Button -->
+                <Button Grid.Row="1" Grid.Column="2" 
+                    WidthRequest="100" HeightRequest="90" 
+                    Text="Right" 
+                    TextColor="Black" FontAttributes="Bold" FontSize="20" 
+                    BorderColor="SlateGrey" BackgroundColor="White" BorderWidth="1"
+                    HorizontalOptions="Center" VerticalOptions="Center"
+                    Clicked="OnRightClicked"/>
+
+                <!-- Down Button -->
+                <Button Grid.Row="2" Grid.Column="1"
+                    WidthRequest="100" HeightRequest="90" 
+                    Text="Down" 
+                    TextColor="Black" FontAttributes="Bold" FontSize="20" 
+                    BorderColor="SlateGrey" BackgroundColor="White" BorderWidth="1"
+                    HorizontalOptions="Center" VerticalOptions="Center"
+                    Clicked="OnDownClicked"/>
+            </Grid>
+
+            <!-- Horizontal angle display -->
+            <Label Text="Horizontal Angle: 0°" 
+                   x:Name="horizontalAngleLabel"
+                   FontSize="18" HorizontalTextAlignment="Center"/>
+
+            <!-- Vertical angle display -->
+            <Label Text="Vertical Angle: 0°"
+                   x:Name="verticalAngleLabel"
+                   FontSize="18" HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+
+
+
+
+<!-- <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" RowSpacing="0" >
+     <Grid.RowDefinitions>
+         <RowDefinition  Height="100"/>
+         <RowDefinition Height="100"/>
+         <RowDefinition Height="100"/>
+     </Grid.RowDefinitions>
+     <Grid.ColumnDefinitions>
+         <ColumnDefinition Width="100" />
+         <ColumnDefinition Width="100"/>
+         <ColumnDefinition Width="100"/>
+     </Grid.ColumnDefinitions>
+     <BoxView Grid.Column="1"
+          Color="White"/>
+     <Button Grid.Column="1" WidthRequest="100" HeightRequest="90"  TextColor="Black" FontAttributes="Bold"
+        Text="Up" FontSize="20" BorderColor="SlateGrey" BackgroundColor="White" BorderWidth="1"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+
+     <BoxView Grid.Row="1"
+          Color="White" />
+     <Button Grid.Row="1"
+        Text="Left" WidthRequest="100" HeightRequest="90"  TextColor="Black" FontAttributes="Bold"
+        FontSize="20" BorderColor="SlateGrey" BackgroundColor="White" BorderWidth="1"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+
+     <BoxView Grid.Row="1"
+          Grid.Column="2"
+          Color="White" />
+     <Button Grid.Row="1"
+        Grid.Column="2" 
+        Text="Right" 
+        WidthRequest="100" HeightRequest="90"  TextColor="Black" FontAttributes="Bold"
+        FontSize="20" BorderColor="SlateGrey" BackgroundColor="White" BorderWidth="1"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+
+     <BoxView Grid.Row="2"
+          Grid.Column="1"
+          Color="White"/>
+     <Button Grid.Row="2"
+        Grid.Column="1"
+        Text="Dwon" 
+        WidthRequest="100" HeightRequest="90"  TextColor="Black" FontAttributes="Bold"
+        FontSize="20" BorderColor="SlateGrey" BackgroundColor="White" BorderWidth="1"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+ </Grid>-->
